@@ -170,3 +170,12 @@
 - 原因：工作区此前没有版本控制。`output/windows/CampusPrototype.exe` 与 `tools/godot/Godot_v4.7.2-stable_win64.exe` 的 SHA-256 相同，为同一个 Godot 编辑器二进制，两者各 172.5 MiB，直接提交会超出 GitHub 单文件 100 MB 上限；试玩压缩包 82.4 MiB 中的绝大部分同样是该二进制，适合作为 Release 附件。
 - 验证：首次提交后核对索引，最大文件为 `output/pdf/校园主题2D动作游戏_立项调研.pdf` 的 0.58 MiB，没有超过 50 MiB 的对象。执行 `git gc --prune=now` 后打包体积 1.17 MiB，工作区状态干净。推送返回 `[new branch] main -> main`，退出码 0。远端独立核对为 133 个文件，`tools/`、`output/windows/`、`game/.godot/`、`tmp/` 与试玩压缩包均不在远端，本地 `HEAD` 与 `origin/main` 指向同一提交 `7fa7864`。
 - 遗留：试玩包尚未上传为 GitHub Release 附件；正式导出模板、iOS 导出与人工试玩仍待后续阶段。引擎二进制不进入版本控制，克隆仓库后需按 `RELEASE.md` 下载 Godot 4.7.2.stable。
+
+## CHG-022 · 2026-10-08 · 发布 Windows 试玩版到 GitHub Release
+
+- 文件：GitHub Release `v0.1.0` 与附件 `CAMPUS-ANOMALY-Windows-v0.1.0.zip`；更新 `CHANGELOG.md`。
+- 变化：通过 GitHub REST API 创建预发布版本并上传 82.38 MiB 试玩包。仓库文件列表保持 133 个文件，压缩包继续由 `.gitignore` 排除。
+- 原因：GitHub 网页上传附件限制单文件 25 MB，82.38 MiB 无法通过网页上传。包内 82.16 MiB 来自 `CampusPrototype.exe`，它与 `tools/godot/` 中的编辑器二进制字节相同，换压缩格式无法把体积降到限制以下。REST API 的附件上限为 2 GB。
+- 验证：附件由 API 报告 `state=uploaded`、`size=86382321`，与本地字节数及 [构建清单](output/prototype/build-manifest.json) 记录的 SHA-256 `7A6B58D2...C590FA` 一致。未登录状态下从公开下载地址取回前 1024 字节，文件头为 `PK`，可下载。Release 正文 2,230 字节，中文正常显示。
+- 补充核验：`curl` 配合 `--netrc-file` 与 `--data-binary` 在该端点上返回 400，改用显式 `Authorization: Bearer` 头后返回 201。此差异已记录，供后续脚本化上传参考。上传所用 token 与临时凭据文件在完成后删除，仓库内无残留。
+- 遗留：试玩包为预发布版本，人工手感评估与试玩门槛数据仍未取得。正式运行模板、iOS 导出与 Steam 接入尚未测量。
