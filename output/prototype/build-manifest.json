@@ -1,0 +1,36 @@
+{
+  "version": "0.1.0",
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "files": [
+    {
+      "name": "CampusPrototype.exe",
+      "bytes": 180858888,
+      "sha256": "ab1824f85bfd8e0e4128182c000c4003a3e042245b2967848d089b2a04b22424"
+    },
+    {
+      "name": "CampusPrototype.pck",
+      "bytes": 228332,
+      "sha256": "e9fff2d03a9d45370d3972720a2f114f169863d4d7c6083904a420afcfcce323"
+    },
+    {
+      "name": "GODOT-LICENSE.txt",
+      "bytes": 1149,
+      "sha256": "b0435e3b3e4e55238f05f4b306f30524a1b2e20147810d436eaa554fa6855c80"
+    },
+    {
+      "name": "GODOT-THIRD-PARTY.json",
+      "bytes": 108339,
+      "sha256": "d5bb9d7bd4bd68dfca01a7d4615a062f7814e8072a357644f239efd75f279219"
+    },
+    {
+      "name": "试玩说明.md",
+      "bytes": 1327,
+      "sha256": "b7557b9b8facf6e8f1a15577941ece371b921c16dbddf368a86d16ee9cb21c02"
+    }
+  ],
+  "zip": {
+    "name": "校园异常_Windows试玩_v0.1.zip",
+    "bytes": 86382321,
+    "sha256": "7a6b58d2c71a28c76bbb10852c6c625da429ea3507689926b2df5e8ee2c590fa"
+  }
+}

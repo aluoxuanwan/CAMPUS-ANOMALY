@@ -1,0 +1,292 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+自检开始：固定时间步 0.0167 秒
+[SELFTEST] 自检开始：固定时间步 0.0167 秒
+检查 1 数据装配
+[SELFTEST] 检查 1 数据装配
+  通过 数据校验无问题 问题数 0
+[SELFTEST]   通过 数据校验无问题 问题数 0
+  通过 武器数量至少 2 实际 3
+[SELFTEST]   通过 武器数量至少 2 实际 3
+  通过 普通敌人至少 6 实际 6
+[SELFTEST]   通过 普通敌人至少 6 实际 6
+  通过 Boss 至少 1 实际 1
+[SELFTEST]   通过 Boss 至少 1 实际 1
+  通过 房间模板至少 8 实际 8
+[SELFTEST]   通过 房间模板至少 8 实际 8
+  通过 词条至少 12 实际 12
+[SELFTEST]   通过 词条至少 12 实际 12
+  通过 主动技能至少 4 实际 6
+[SELFTEST]   通过 主动技能至少 4 实际 6
+  通过 奖励池 attack 非空 条目 3
+[SELFTEST]   通过 奖励池 attack 非空 条目 3
+  通过 奖励池 mobility 非空 条目 4
+[SELFTEST]   通过 奖励池 mobility 非空 条目 4
+  通过 奖励池 defense 非空 条目 5
+[SELFTEST]   通过 奖励池 defense 非空 条目 5
+检查 2 伤害分层结算
+[SELFTEST] 检查 2 伤害分层结算
+  通过 同组相加跨组相乘 结果 22
+[SELFTEST]   通过 同组相加跨组相乘 结果 22
+  通过 独立层相乘 结果 300
+[SELFTEST]   通过 独立层相乘 结果 300
+  通过 防御与减伤顺序 结果 40
+[SELFTEST]   通过 防御与减伤顺序 结果 40
+  通过 最低伤害为 1 结果 1
+[SELFTEST]   通过 最低伤害为 1 结果 1
+  通过 预览与结算同源 基础 10 固定 +2 weapon +50% club +25% 合计 22
+[SELFTEST]   通过 预览与结算同源 基础 10 固定 +2 weapon +50% club +25% 合计 22
+检查 3 词条叠加与上限
+[SELFTEST] 检查 3 词条叠加与上限
+  通过 词条层数上限生效 第三次获得返回 0
+[SELFTEST]   通过 词条层数上限生效 第三次获得返回 0
+  通过 移动速度加成正确 结果 112.00
+[SELFTEST]   通过 移动速度加成正确 结果 112.00
+  通过 暴击率加成正确 结果 0.080
+[SELFTEST]   通过 暴击率加成正确 结果 0.080
+  通过 条件加成仅在有标签时生效 无标签 1.00 有标签 1.25
+[SELFTEST]   通过 条件加成仅在有标签时生效 无标签 1.00 有标签 1.25
+  通过 临时加成生效 结果 -0.30
+[SELFTEST]   通过 临时加成生效 结果 -0.30
+  通过 临时加成到期失效 结果 0.00
+[SELFTEST]   通过 临时加成到期失效 结果 0.00
+检查 4 触发链上限
+[SELFTEST] 检查 4 触发链上限
+WARNING: [ModifierEngine] 来源 burst_source 的每秒触发次数超过 24
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] _note_limit (res://src/combat/modifier_engine.gd:304)
+       [1] _check_burst (res://src/combat/modifier_engine.gd:285)
+       [2] fire_event (res://src/combat/modifier_engine.gd:210)
+       [3] _check_trigger_limits (res://src/core/self_test.gd:163)
+       [4] run (res://src/core/self_test.gd:24)
+       [5] _run_self_test (res://src/main.gd:95)
+       [6] _ready (res://src/main.gd:29)
+  通过 配额内允许触发 触发 24 次，上限 24
+[SELFTEST]   通过 配额内允许触发 触发 24 次，上限 24
+  通过 超配额一律拒绝 额外触发 0 次
+[SELFTEST]   通过 超配额一律拒绝 额外触发 0 次
+  通过 超限时留下记录 记录 1 条
+[SELFTEST]   通过 超限时留下记录 记录 1 条
+  通过 窗口重置后恢复 重置后触发 1 次
+[SELFTEST]   通过 窗口重置后恢复 重置后触发 1 次
+检查 5 存档读写与迁移
+[SELFTEST] 检查 5 存档读写与迁移
+  通过 存档可读取 存档版本 1 社团点数 74 总局数 9 最佳房间 6
+[SELFTEST]   通过 存档可读取 存档版本 1 社团点数 74 总局数 9 最佳房间 6
+  通过 迁移补齐设置键 键数 5
+[SELFTEST]   通过 迁移补齐设置键 键数 5
+  通过 迁移保留原有数值 社团点数 7
+[SELFTEST]   通过 迁移保留原有数值 社团点数 7
+  通过 迁移升级版本号 版本 1
+[SELFTEST]   通过 迁移升级版本号 版本 1
+  通过 存档记录可读 社团点数 74
+[SELFTEST]   通过 存档记录可读 社团点数 74
+检查 6 房间模板可站立性
+[SELFTEST] 检查 6 房间模板可站立性
+  通过 模板 room_01_entrance 有可站立格 可站立格 261
+[SELFTEST]   通过 模板 room_01_entrance 有可站立格 可站立格 261
+  通过 模板 room_01_entrance 玩家出生点未被占 出生格 (3, 7)
+[SELFTEST]   通过 模板 room_01_entrance 玩家出生点未被占 出生格 (3, 7)
+  通过 模板 room_01_entrance 威胁预算内 威胁 4，上限 4
+[SELFTEST]   通过 模板 room_01_entrance 威胁预算内 威胁 4，上限 4
+  通过 模板 room_01_entrance 遵守高控制上限 高控制 0
+[SELFTEST]   通过 模板 room_01_entrance 遵守高控制上限 高控制 0
+  通过 模板 room_02_desks 有可站立格 可站立格 253
+[SELFTEST]   通过 模板 room_02_desks 有可站立格 可站立格 253
+  通过 模板 room_02_desks 玩家出生点未被占 出生格 (3, 7)
+[SELFTEST]   通过 模板 room_02_desks 玩家出生点未被占 出生格 (3, 7)
+  通过 模板 room_02_desks 威胁预算内 威胁 4，上限 5
+[SELFTEST]   通过 模板 room_02_desks 威胁预算内 威胁 4，上限 5
+  通过 模板 room_03_corridor 有可站立格 可站立格 256
+[SELFTEST]   通过 模板 room_03_corridor 有可站立格 可站立格 256
+  通过 模板 room_03_corridor 玩家出生点未被占 出生格 (3, 7)
+[SELFTEST]   通过 模板 room_03_corridor 玩家出生点未被占 出生格 (3, 7)
+  通过 模板 room_03_corridor 威胁预算内 威胁 4，上限 5
+[SELFTEST]   通过 模板 room_03_corridor 威胁预算内 威胁 4，上限 5
+  通过 模板 room_04_lab_benches 有可站立格 可站立格 253
+[SELFTEST]   通过 模板 room_04_lab_benches 有可站立格 可站立格 253
+  通过 模板 room_04_lab_benches 玩家出生点未被占 出生格 (3, 7)
+[SELFTEST]   通过 模板 room_04_lab_benches 玩家出生点未被占 出生格 (3, 7)
+  通过 模板 room_04_lab_benches 威胁预算内 威胁 6，上限 6
+[SELFTEST]   通过 模板 room_04_lab_benches 威胁预算内 威胁 6，上限 6
+  通过 模板 room_05_library 有可站立格 可站立格 249
+[SELFTEST]   通过 模板 room_05_library 有可站立格 可站立格 249
+  通过 模板 room_05_library 玩家出生点未被占 出生格 (3, 7)
+[SELFTEST]   通过 模板 room_05_library 玩家出生点未被占 出生格 (3, 7)
+  通过 模板 room_05_library 威胁预算内 威胁 6，上限 6
+[SELFTEST]   通过 模板 room_05_library 威胁预算内 威胁 6，上限 6
+  通过 模板 room_06_gym 有可站立格 可站立格 256
+[SELFTEST]   通过 模板 room_06_gym 有可站立格 可站立格 256
+  通过 模板 room_06_gym 玩家出生点未被占 出生格 (3, 7)
+[SELFTEST]   通过 模板 room_06_gym 玩家出生点未被占 出生格 (3, 7)
+  通过 模板 room_06_gym 威胁预算内 威胁 6，上限 6
+[SELFTEST]   通过 模板 room_06_gym 威胁预算内 威胁 6，上限 6
+  通过 模板 room_06_gym 遵守高控制上限 高控制 0
+[SELFTEST]   通过 模板 room_06_gym 遵守高控制上限 高控制 0
+  通过 模板 room_07_elite_podium 有可站立格 可站立格 258
+[SELFTEST]   通过 模板 room_07_elite_podium 有可站立格 可站立格 258
+  通过 模板 room_07_elite_podium 玩家出生点未被占 出生格 (3, 7)
+[SELFTEST]   通过 模板 room_07_elite_podium 玩家出生点未被占 出生格 (3, 7)
+  通过 模板 room_07_elite_podium 威胁预算内 威胁 7，上限 7
+[SELFTEST]   通过 模板 room_07_elite_podium 威胁预算内 威胁 7，上限 7
+  通过 模板 room_08_boss_hall 有可站立格 可站立格 260
+[SELFTEST]   通过 模板 room_08_boss_hall 有可站立格 可站立格 260
+  通过 模板 room_08_boss_hall 玩家出生点未被占 出生格 (3, 7)
+[SELFTEST]   通过 模板 room_08_boss_hall 玩家出生点未被占 出生格 (3, 7)
+  通过 模板 room_08_boss_hall 威胁预算内 威胁 12，上限 13
+[SELFTEST]   通过 模板 room_08_boss_hall 威胁预算内 威胁 12，上限 13
+  通过 模板 room_08_boss_hall 遵守高控制上限 高控制 0
+[SELFTEST]   通过 模板 room_08_boss_hall 遵守高控制上限 高控制 0
+检查 7 房间图连通性
+[SELFTEST] 检查 7 房间图连通性
+  通过 二十个随机种子全部连通 通过 20/20
+[SELFTEST]   通过 二十个随机种子全部连通 通过 20/20
+  通过 战斗房数量合理 平均 7.0
+[SELFTEST]   通过 战斗房数量合理 平均 7.0
+检查 8 端到端战斗循环
+[SELFTEST] 检查 8 端到端战斗循环
+  通过 房间与玩家已建立 状态 战斗
+[SELFTEST]   通过 房间与玩家已建立 状态 战斗
+  通过 移动响应 位移 120.2
+[SELFTEST]   通过 移动响应 位移 120.2
+  通过 冲刺可触发 返回 true
+[SELFTEST]   通过 冲刺可触发 返回 true
+  通过 冲刺提供无敌 无敌剩余 0.140
+[SELFTEST]   通过 冲刺提供无敌 无敌剩余 0.140
+  通过 冲刺进入冷却 冷却 0.70
+[SELFTEST]   通过 冲刺进入冷却 冷却 0.70
+  通过 冲刺状态结束 状态 0
+[SELFTEST]   通过 冲刺状态结束 状态 0
+  通过 无敌期间免伤 扣除 0，剩余生命 100.0
+[SELFTEST]   通过 无敌期间免伤 扣除 0，剩余生命 100.0
+  通过 武器命中造成伤害 敌人生命 30 到 24
+[SELFTEST]   通过 武器命中造成伤害 敌人生命 30 到 24
+  通过 近战测试使用直尺 ruler_sweep
+[SELFTEST]   通过 近战测试使用直尺 ruler_sweep
+  通过 近战武器命中造成伤害 敌人生命 24 到 3
+[SELFTEST]   通过 近战武器命中造成伤害 敌人生命 24 到 3
+  通过 追击敌人接近玩家 距离 260 到 119
+[SELFTEST]   通过 追击敌人接近玩家 距离 260 到 119
+  通过 致命伤害触发失败流程 扣除 50，生命 0.0，进行中 false
+[SELFTEST]   通过 致命伤害触发失败流程 扣除 50，生命 0.0，进行中 false
+  通过 失败状态可读 状态 失败
+[SELFTEST]   通过 失败状态可读 状态 失败
+  通过 失败后仍发放社团点数 社团点数 76
+[SELFTEST]   通过 失败后仍发放社团点数 社团点数 76
+  通过 暂停状态生效 状态 暂停 暂停 true
+[SELFTEST]   通过 暂停状态生效 状态 暂停 暂停 true
+  通过 暂停期间局内时钟停止 暂停前 0.000 暂停后 0.000
+[SELFTEST]   通过 暂停期间局内时钟停止 暂停前 0.000 暂停后 0.000
+  通过 恢复后回到战斗 状态 战斗
+[SELFTEST]   通过 恢复后回到战斗 状态 战斗
+  通过 恢复后时钟继续 时钟 0.167
+[SELFTEST]   通过 恢复后时钟继续 时钟 0.167
+  通过 房间清除进入奖励选择 状态 奖励
+[SELFTEST]   通过 房间清除进入奖励选择 状态 奖励
+  通过 清除房间计入进度 清理房间 1
+[SELFTEST]   通过 清除房间计入进度 清理房间 1
+  通过 存在可选下一房间 可选 2 个
+[SELFTEST]   通过 存在可选下一房间 可选 2 个
+  通过 选择后进入新房间 房间 0 到 1
+[SELFTEST]   通过 选择后进入新房间 房间 0 到 1
+  通过 重开新局成功 状态 战斗 生命 100
+[SELFTEST]   通过 重开新局成功 状态 战斗 生命 100
+  通过 种子记录正确 种子 777
+[SELFTEST]   通过 种子记录正确 种子 777
+检查 9 同种子生成一致
+[SELFTEST] 检查 9 同种子生成一致
+  通过 同种子房间图一致 0:room_01_entrance:enemy_misprint_chaser@3,12,enemy_shield_desk@13,3|1:room_02_desks:enemy_shield_desk@7,6,enemy_sprinter_sneaker@12,10|2:room_01_entrance:enemy_shield_desk@10,12,enemy_sprinter_sneaker@22,9|3:room_05_library:enemy_copy_machine@19,5,enemy_shield_desk@16,12,enemy_sprinter_sneaker@17,9|4:room_06_gym:enemy_shield_desk@13,5,enemy_sprinter_sneaker@15,10,enemy_misprint_chaser@1,12,enemy_sprinter_sneaker@19,3|5:room_04_lab_benches:enemy_sprinter_sneaker@7,5,enemy_misprint_chaser@1,1,enemy_ink_blot@17,12,enemy_shield_desk@7,11,enemy_sprinter_sneaker@18,10|6:room_03_corridor:enemy_shield_desk@13,10,enemy_sprinter_sneaker@19,10,enemy_misprint_chaser@15,6,enemy_shield_desk@17,4|7:room_07_elite_podium:enemy_copy_machine@2,11,enemy_shield_desk@9,8,enemy_sprinter_sneaker@22,12,enemy_misprint_chaser@18,6,enemy_laser_pointer@2,1|8:room_08_boss_hall:
+[SELFTEST]   通过 同种子房间图一致 0:room_01_entrance:enemy_misprint_chaser@3,12,enemy_shield_desk@13,3|1:room_02_desks:enemy_shield_desk@7,6,enemy_sprinter_sneaker@12,10|2:room_01_entrance:enemy_shield_desk@10,12,enemy_sprinter_sneaker@22,9|3:room_05_library:enemy_copy_machine@19,5,enemy_shield_desk@16,12,enemy_sprinter_sneaker@17,9|4:room_06_gym:enemy_shield_desk@13,5,enemy_sprinter_sneaker@15,10,enemy_misprint_chaser@1,12,enemy_sprinter_sneaker@19,3|5:room_04_lab_benches:enemy_sprinter_sneaker@7,5,enemy_misprint_chaser@1,1,enemy_ink_blot@17,12,enemy_shield_desk@7,11,enemy_sprinter_sneaker@18,10|6:room_03_corridor:enemy_shield_desk@13,10,enemy_sprinter_sneaker@19,10,enemy_misprint_chaser@15,6,enemy_shield_desk@17,4|7:room_07_elite_podium:enemy_copy_machine@2,11,enemy_shield_desk@9,8,enemy_sprinter_sneaker@22,12,enemy_misprint_chaser@18,6,enemy_laser_pointer@2,1|8:room_08_boss_hall:
+  通过 不同种子房间图不同 第二个签名 0:room_01_entrance:enemy_misprint_chaser@16,1,enemy_shield_desk@9,7|1:room_02_desks:enemy_laser_pointer@5,12,enemy_shield_desk@13,8|2:room_04_lab_benches:enemy_laser_pointer@15,8,enemy_copy_machine@11,7,enemy_shield_desk@13,11|3:room_05_library:enemy_copy_machine@7,4,enemy_shield_desk@12,3,enemy_sprinter_sneaker@15,12|4:room_01_entrance:enemy_misprint_chaser@21,1,enemy_shield_desk@20,12,enemy_sprinter_sneaker@6,10|5:room_03_corridor:enemy_shield_desk@7,9,enemy_sprinter_sneaker@13,9,enemy_misprint_chaser@12,6,enemy_shield_desk@12,3|6:room_06_gym:enemy_misprint_chaser@17,3,enemy_sprinter_sneaker@1,1,enemy_shield_desk@21,4,enemy_sprinter_sneaker@22,5,enemy_misprint_chaser@3,2,enemy_sprinter_sneaker@16,1|7:room_07_elite_podium:enemy_copy_machine@8,10,enemy_shield_desk@22,2,enemy_sprinter_sneaker@22,7,enemy_misprint_chaser@12,5,enemy_laser_pointer@12,11|8:room_08_boss_hall:
+[SELFTEST]   通过 不同种子房间图不同 第二个签名 0:room_01_entrance:enemy_misprint_chaser@16,1,enemy_shield_desk@9,7|1:room_02_desks:enemy_laser_pointer@5,12,enemy_shield_desk@13,8|2:room_04_lab_benches:enemy_laser_pointer@15,8,enemy_copy_machine@11,7,enemy_shield_desk@13,11|3:room_05_library:enemy_copy_machine@7,4,enemy_shield_desk@12,3,enemy_sprinter_sneaker@15,12|4:room_01_entrance:enemy_misprint_chaser@21,1,enemy_shield_desk@20,12,enemy_sprinter_sneaker@6,10|5:room_03_corridor:enemy_shield_desk@7,9,enemy_sprinter_sneaker@13,9,enemy_misprint_chaser@12,6,enemy_shield_desk@12,3|6:room_06_gym:enemy_misprint_chaser@17,3,enemy_sprinter_sneaker@1,1,enemy_shield_desk@21,4,enemy_sprinter_sneaker@22,5,enemy_misprint_chaser@3,2,enemy_sprinter_sneaker@16,1|7:room_07_elite_podium:enemy_copy_machine@8,10,enemy_shield_desk@22,2,enemy_sprinter_sneaker@22,7,enemy_misprint_chaser@12,5,enemy_laser_pointer@12,11|8:room_08_boss_hall:
+检查 10 原型故障回归
+[SELFTEST] 检查 10 原型故障回归
+WARNING: [ModifierEngine] 来源 heal_regression 的每秒触发次数超过 24
+   at: push_warning (core/variant/variant_utility.cpp:1033)
+   GDScript backtrace (most recent call first):
+       [0] _note_limit (res://src/combat/modifier_engine.gd:304)
+       [1] _check_burst (res://src/combat/modifier_engine.gd:285)
+       [2] fire_event (res://src/combat/modifier_engine.gd:210)
+       [3] run (res://src/core/prototype_regressions.gd:25)
+       [4] run (res://src/core/self_test.gd:32)
+       [5] _check_combat_loop (res://src/core/self_test.gd:416)
+       [6] _wait_physics_frames (res://src/core/self_test.gd:432)
+  通过 触发配额限制实际回血次数 24
+[SELFTEST]   通过 触发配额限制实际回血次数 24
+  通过 重置配额后实际回血恢复 
+[SELFTEST]   通过 重置配额后实际回血恢复 
+  通过 验证使用独立存档 user://qa/save_v1.json
+[SELFTEST]   通过 验证使用独立存档 user://qa/save_v1.json
+  通过 存档写入成功 
+[SELFTEST]   通过 存档写入成功 
+  通过 存档回读保留数据 
+[SELFTEST]   通过 存档回读保留数据 
+  通过 损坏主存档恢复有效备份 
+[SELFTEST]   通过 损坏主存档恢复有效备份 
+  通过 恢复后有效备份仍可读取 
+[SELFTEST]   通过 恢复后有效备份仍可读取 
+  通过 玩家只由总控推进物理 
+[SELFTEST]   通过 玩家只由总控推进物理 
+  通过 六十帧只推进一秒玩家计时 1.0000
+[SELFTEST]   通过 六十帧只推进一秒玩家计时 1.0000
+  通过 房间实际生成敌人 2
+[SELFTEST]   通过 房间实际生成敌人 2
+  通过 有敌人时房间保持开放 
+[SELFTEST]   通过 有敌人时房间保持开放 
+  通过 直尺扇形造成真实近战伤害 39.0
+[SELFTEST]   通过 直尺扇形造成真实近战伤害 39.0
+  通过 同一次扇形攻击不重复扣血 
+[SELFTEST]   通过 同一次扇形攻击不重复扣血 
+  通过 敌人近战可伤害玩家 
+[SELFTEST]   通过 敌人近战可伤害玩家 
+  通过 敌方投射物不继承玩家加成 90.0
+[SELFTEST]   通过 敌方投射物不继承玩家加成 90.0
+  通过 击杀回血词条实际生效 
+[SELFTEST]   通过 击杀回血词条实际生效 
+  通过 清房回血词条实际生效 
+[SELFTEST]   通过 清房回血词条实际生效 
+  通过 临时防御减少受到的伤害 
+[SELFTEST]   通过 临时防御减少受到的伤害 
+  通过 临时防御到期恢复正常 
+[SELFTEST]   通过 临时防御到期恢复正常 
+  通过 眩晕到期解除 
+[SELFTEST]   通过 眩晕到期解除 
+  通过 切换武器保留弹匣 
+[SELFTEST]   通过 切换武器保留弹匣 
+  通过 高速扫掠识别墙体反弹 
+[SELFTEST]   通过 高速扫掠识别墙体反弹 
+  通过 反弹位置留在房间内 (56.0, 100.0)
+[SELFTEST]   通过 反弹位置留在房间内 (56.0, 100.0)
+  通过 寻路绕开中间课桌 (0.0, -1.0)
+[SELFTEST]   通过 寻路绕开中间课桌 (0.0, -1.0)
+  通过 铃声阶段切换 
+[SELFTEST]   通过 铃声阶段切换 
+  通过 课间移动倍率生效 
+[SELFTEST]   通过 课间移动倍率生效 
+  通过 暂停时技能冷却保持 
+[SELFTEST]   通过 暂停时技能冷却保持 
+  通过 未选奖励不能进入下一房 
+[SELFTEST]   通过 未选奖励不能进入下一房 
+  通过 无效奖励被拒绝 
+[SELFTEST]   通过 无效奖励被拒绝 
+  通过 有效奖励可领取 
+[SELFTEST]   通过 有效奖励可领取 
+  通过 奖励不能重复领取 
+[SELFTEST]   通过 奖励不能重复领取 
+  通过 选奖励后可以进房 
+[SELFTEST]   通过 选奖励后可以进房 
+  通过 换房清空旧召唤物和区域 
+[SELFTEST]   通过 换房清空旧召唤物和区域 
+  通过 换房清空旧敌人和子弹 
+[SELFTEST]   通过 换房清空旧敌人和子弹 
+  通过 六节路线实际生成并清理波次 6
+[SELFTEST]   通过 六节路线实际生成并清理波次 6
+  通过 Boss 击败后进入通关 通关
+[SELFTEST]   通过 Boss 击败后进入通关 通关
+  通过 同一局结算不会重复发放 
+[SELFTEST]   通过 同一局结算不会重复发放 
+自检结束：通过 122 项，失败 0 项，警告 0 项
+[SELFTEST] 自检结束：通过 122 项，失败 0 项，警告 0 项
+[SELFTEST] 结果：通过
+[SELFTEST] 检查项 122 失败 0 警告 0

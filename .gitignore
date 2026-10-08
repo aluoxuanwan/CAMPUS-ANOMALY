@@ -1,0 +1,27 @@
+# Git 忽略规则
+#
+# 原则：仓库只保存源码、数据、文档与脚本。
+# 引擎二进制、构建产物与交付压缩包体积大且可重新生成，通过 GitHub Releases 分发。
+
+# 引擎二进制：约 172.5 MiB，可从 Godot 官方发布页重新获取
+/tools/
+
+# 构建产物：CampusPrototype.exe 与工具链中的引擎二进制完全相同，PCK 可由源码重新导出
+/output/windows/
+
+# 交付压缩包：作为 Release 附件上传，不进入源码历史
+/output/*.zip
+/output/**/*.zip
+*.zip
+
+# Godot 导入缓存：可由 project.godot 与 data/*.json 重新生成
+.godot/
+
+# 临时研究草稿与中间产物
+/tmp/
+
+# Python 与系统文件
+__pycache__/
+*.pyc
+Thumbs.db
+Desktop.ini

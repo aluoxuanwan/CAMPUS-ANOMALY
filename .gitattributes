@@ -1,0 +1,27 @@
+# 二进制与语言属性
+#
+# 换行交给 core.autocrlf 与 text=auto 处理，避免在 Windows 上产生整树重写。
+# 这里只声明二进制类型，并让 GitHub 正确统计 Godot 项目的语言。
+
+# 明确标记二进制，禁止换行转换与文本 diff
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.pdf binary
+*.zip binary
+*.exe binary
+*.pck binary
+*.ttf binary
+*.ttc binary
+*.otf binary
+*.res binary
+
+# Godot 与数据文件按文本处理
+*.gd text
+*.tscn text
+*.tres text
+*.godot text
+*.json text
+*.md text
