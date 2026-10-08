@@ -162,3 +162,11 @@
 - 原因：让最终交付文件可直接找到和核对。
 - 验证：压缩包 86,382,321 字节，包含 5 个便携文件，ZIP 完整性通过；最终 Boss 标签在窗口中清晰可读。新增链接目标均已存在。
 - 遗留：下一轮应优先进行人工试玩，再决定正式美术和内容扩展。
+
+## CHG-021 · 2026-10-08 · 建立 Git 版本控制并发布到 GitHub
+
+- 文件：`.gitignore`、`.gitattributes`、`RELEASE.md`、`CHANGELOG.md`；建立 `.git` 仓库并推送到 `https://github.com/aluoxuanwan/CAMPUS-ANOMALY`。
+- 变化：初始化仓库并整理首次提交。排除引擎二进制、构建产物、Godot 导入缓存、临时草稿与交付压缩包，共 133 个文件进入版本控制，提交为 `7fa7864`，远端分支 `main`。新增发布说明，写清引擎获取、运行检查与试玩包下载方式。
+- 原因：工作区此前没有版本控制。`output/windows/CampusPrototype.exe` 与 `tools/godot/Godot_v4.7.2-stable_win64.exe` 的 SHA-256 相同，为同一个 Godot 编辑器二进制，两者各 172.5 MiB，直接提交会超出 GitHub 单文件 100 MB 上限；试玩压缩包 82.4 MiB 中的绝大部分同样是该二进制，适合作为 Release 附件。
+- 验证：首次提交后核对索引，最大文件为 `output/pdf/校园主题2D动作游戏_立项调研.pdf` 的 0.58 MiB，没有超过 50 MiB 的对象。执行 `git gc --prune=now` 后打包体积 1.17 MiB，工作区状态干净。推送返回 `[new branch] main -> main`，退出码 0。远端独立核对为 133 个文件，`tools/`、`output/windows/`、`game/.godot/`、`tmp/` 与试玩压缩包均不在远端，本地 `HEAD` 与 `origin/main` 指向同一提交 `7fa7864`。
+- 遗留：试玩包尚未上传为 GitHub Release 附件；正式导出模板、iOS 导出与人工试玩仍待后续阶段。引擎二进制不进入版本控制，克隆仓库后需按 `RELEASE.md` 下载 Godot 4.7.2.stable。
